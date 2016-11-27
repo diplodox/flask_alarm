@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block photos %}
+
+<div>
+
+	{% if liste_photos %}
+
+		Liste des photos<br />
+
+		{% for pho in liste_photos %}
+	        
+	        <div class="thumb">
+	        	<img src="photos/{{pho}}" width="200" />
+	        </div>
+	    {% endfor %}
+
+	{% else %}
+		Pas de photos
+	{% endif %}
+
+</div>
+
+{% endblock %}

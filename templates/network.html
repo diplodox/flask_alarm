@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block check_network %}
+
+
+
+	{% if liste_network %}
+
+		Liste des utlisateurs<br />
+		<ul>
+		{% key, val net in liste_network %}
+	        
+	        <li>
+			{{liste_network[key]}} // {{liste_network[val]}}
+	        </li>
+	      {% endfor %}
+	      </ul>
+	{% else %}
+		Pas de liste network
+	{% endif %}
+
+
+{% endblock %}

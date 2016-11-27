@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block todo %}
+<div class="panel panel-blue">
+		<div class="panel-heading dark-overlay"><svg class="glyph stroked clipboard-with-paper"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>To-do List</div>
+		<div class="panel-body">
+			<ul class="todo-list">
+						
+					<!-- FOR LOOP for item in liste -->
+				{% for item in liste_items %}
+				<li class="todo-list-item">
+					<div class="checkbox">
+							<input type="checkbox" id="checkbox01" />
+							<label for="checkbox01">{{item}} / item[0]</label>
+					</div>
+					<div class="pull-right action-buttons">
+							<!-- id = item[0]" -->
+							<a href="#" class="trash btn_del" id="item_01"><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+					</div>
+				</li>
+				{% endfor %}
+							
+							
+			</ul>
+		</div>
+		<div class="panel-footer">
+					<div class="input-group">
+						<input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" />
+						<span class="input-group-btn">
+						<button class="btn btn-primary btn-md" id="btn-todo">Ajouter</button>
+					</span>
+				</div>
+		</div>
+</div>
+
+{% endblock %}
